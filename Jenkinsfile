@@ -1,4 +1,4 @@
-NAMESPACE="cap-apps"
+NAMESPACE="myproject"
 NOMBRE_APP="eap-app"
 APPROVAL_EMAIL=""
 
@@ -44,7 +44,7 @@ try {
 					def res
 					echo '[CREATE]Proyecto no existe, lo creamos a partir del template'
 					// echo "[CREATE] PARAMS ${params}"
-					res = openshift.newApp( templatePath )
+					res = openshift.newApp( "${WORKSPACE}/"+templatePath )
 
 					bc = res.narrow('bc')
 					dc = res.narrow('dc')
